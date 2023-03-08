@@ -25,8 +25,18 @@ repositories {
     mavenCentral()
 }
 
+// https://darkstart.tistory.com/238
+// https://www.baeldung.com/spring-maven-bom
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:2020.0.6'
+    }
+}
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.cloud:spring-cloud-config-server')
+//    implementation('org.springframework.boot:spring-boot-starter-security')
+//    implementation('org.springframework.boot:spring-boot-starter-web')
+
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 
     compileOnly('org.projectlombok:lombok:1.18.24')

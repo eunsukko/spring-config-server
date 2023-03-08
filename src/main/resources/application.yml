@@ -1,0 +1,11 @@
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/eunsukko/spring-cloud-config-test-repo
+server:
+  port: 8888
