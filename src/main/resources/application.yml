@@ -1,11 +1,15 @@
-
 spring:
   application:
     name: config-server
+  profiles:
+    active: awss3
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/eunsukko/spring-cloud-config-test-repo
+#        git:
+#          uri: https://github.com/eunsukko/spring-cloud-config-test-repo
+        awss3:
+          region: ap-northeast-2
+          bucket: config-client
 server:
   port: 8888
